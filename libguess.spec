@@ -6,7 +6,7 @@ License:	Other
 Group:		Applications/System
 Source0:	http://distfiles.atheme.org/%{name}-%{version}.tgz
 # Source0-md5:	89ef9296162a9b5baf32a321d9e367c0
-URL:		http://www.atheme.org/project/libguess/
+URL:		http://www.atheme.org/project/libguess
 BuildRequires:	libmowgli-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
