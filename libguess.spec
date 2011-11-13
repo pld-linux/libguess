@@ -29,7 +29,6 @@ for example.
 %package devel
 Summary:	Header files and development documentation for libguess
 Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do libguess
-Summary(pt_BR.UTF-8):	Arquivos de desenvolvimento para capabilities
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -38,9 +37,6 @@ Header files and development documentation for libguess.
 
 %description devel -l pl.UTF-8
 Pliki nagłówkowe i dokumentacja do libguess.
-
-%description devel -l pt_BR.UTF-8
-Arquivos de desenvolvimento para capabilities.
 
 %prep
 %setup -q
