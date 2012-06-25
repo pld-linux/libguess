@@ -1,13 +1,13 @@
 Summary:	A high-speed character set detection library
 Name:		libguess
-Version:	1.0
+Version:	1.1
 Release:	1
 License:	Other
 Group:		Applications/System
-Source0:	http://distfiles.atheme.org/%{name}-%{version}.tgz
-# Source0-md5:	89ef9296162a9b5baf32a321d9e367c0
+Source0:	http://distfiles.atheme.org/%{name}-%{version}.tar.bz2
+# Source0-md5:	9a17e973bc03814170b4ed03172348dc
 URL:		http://www.atheme.org/project/libguess
-BuildRequires:	libmowgli-devel
+BuildRequires:	libmowgli-devel >= 0.9.50
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
