@@ -1,42 +1,41 @@
 Summary:	A high-speed character set detection library
+Summary(pl.UTF-8):	Biblioteka do szybkiego rozpoznawania zestawu znaków
 Name:		libguess
 Version:	1.1
 Release:	1
-License:	Other
-Group:		Applications/System
+License:	BSD
+Group:		Libraries
 Source0:	http://distfiles.atheme.org/%{name}-%{version}.tar.bz2
 # Source0-md5:	9a17e973bc03814170b4ed03172348dc
 URL:		http://www.atheme.org/project/libguess
 BuildRequires:	libmowgli-devel >= 0.9.50
+BuildRequires:	pkgconfig
+Requires:	libmowgli >= 0.9.50
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-A high-speed character set detection library
+libguess is a high-speed character set detection library. It has two
+functions:
+- to determine encoding,
+- to validate UTF-8 encoding.
 
-libguess has two functions:
-
-libguess_determine_encoding(const char *inbuf, int length, const char
-- *region); This detects a character set. Returns an appropriate
-  charset name that can be passed to iconv_open(). Region is the name of
-  the language or region that the data is related to, e.g. 'Baltic' for
-  the Baltic states, or 'Japanese' for Japan.
-
-libguess_validate_utf8(const char *inbuf, int length); This employs
-libguess's DFA-based character set validation rules to ensure that a
-string is pure UTF-8. GLib's UTF-8 validation functions are broken,
-for example.
+%description -l pl.UTF-8
+libguess to biblioteka do szybkiego rozpoznawania zestawu znaków. Ma
+dwie funkcje:
+- do określania kodowania,
+- do sprawdzania poprawności kodowania UTF-8.
 
 %package devel
-Summary:	Header files and development documentation for libguess
-Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do libguess
+Summary:	Header files for libguess library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libguess
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Header files and development documentation for libguess.
+Header files for libguess library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe i dokumentacja do libguess.
+Pliki nagłówkowe biblioteki libguess.
 
 %prep
 %setup -q
@@ -58,6 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc COPYING README
 %attr(755,root,root) %{_libdir}/libguess.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/libguess.so.1
 
