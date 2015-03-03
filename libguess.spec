@@ -2,7 +2,7 @@ Summary:	A high-speed character set detection library
 Summary(pl.UTF-8):	Biblioteka do szybkiego rozpoznawania zestawu znaków
 Name:		libguess
 Version:	1.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 Source0:	http://distfiles.atheme.org/%{name}-%{version}.tar.bz2
