@@ -1,16 +1,16 @@
 Summary:	A high-speed character set detection library
 Summary(pl.UTF-8):	Biblioteka do szybkiego rozpoznawania zestawu znaków
 Name:		libguess
-Version:	1.1
-Release:	2
+Version:	1.2
+Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://distfiles.atheme.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	9a17e973bc03814170b4ed03172348dc
-URL:		http://www.atheme.org/project/libguess
-BuildRequires:	libmowgli-devel >= 0.9.50
+# code developed at https://github.com/atheme/libguess (no releases tagged)
+Source0:	http://rabbit.dereferenced.org/~nenolod/distfiles/%{name}-%{version}.tar.bz2
+# Source0-md5:	7633fbfbeb75b1ded7f33cca3d8d4762
+URL:		http://atheme.org/projects/libguess.html
 BuildRequires:	pkgconfig
-Requires:	libmowgli >= 0.9.50
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,6 +40,8 @@ Pliki nagłówkowe biblioteki libguess.
 %prep
 %setup -q
 
+%{__sed} -i -e '/^\.SILENT/d' buildsys.mk.in
+
 %build
 %configure
 
@@ -58,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc COPYING README
-%attr(755,root,root) %{_libdir}/libguess.so.*.*
+%attr(755,root,root) %{_libdir}/libguess.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libguess.so.1
 
 %files devel
